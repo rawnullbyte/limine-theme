@@ -17,7 +17,7 @@ CYAN="\e[36m"
 RESET="\e[0m"
 BOLD="\e[1m"
 
-THEME_NAME="cachyos"
+THEME_NAME="custom"
 BACKUP_SUFFIX=".bak-$THEME_NAME"
 PARAMS=(
   "term_palette: 1e1e2e;f38ba8;a6e3a1;f9e2af;89b4fa;f5c2e7;94e2d5;cdd6f4"
@@ -27,7 +27,7 @@ PARAMS=(
   "term_background_bright: ffffffff"
   "term_foreground_bright: cdd6f4"
   "timeout: 10"
-  "wallpaper: boot():/cachyos.png"
+  "wallpaper: boot():/wallpaper.png"
   "interface_branding:"
   "default_entry: 2"
 )
@@ -88,7 +88,7 @@ install_theme() {
 
   theme_dir=$(dirname "$limine_conf")
   echo -e "${CYAN}Copying theme image to $theme_dir...${RESET}"
-  cp "./cachyos.png" "$theme_dir/"
+  cp "./wallpaper.png" "$theme_dir/"
 
   echo -e "${GREEN}${BOLD}Theme installed successfully!${RESET}"
 
@@ -117,7 +117,7 @@ remove_theme() {
 
   theme_dir=$(dirname "$limine_conf")
   echo -e "${CYAN}Removing theme image from $theme_dir...${RESET}"
-  rm -f "$theme_dir/cachyos.png"
+  rm -f "$theme_dir/wallpaper.png"
 
   echo -e "${GREEN}${BOLD}Theme removed and backup restored!${RESET}"
 
